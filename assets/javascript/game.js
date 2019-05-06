@@ -26,7 +26,7 @@ document.onkeyup = function(event) {
             guessesMade = [];
             computerGuess = letters[Math.floor(Math.random()* letters.length)];
         }
-    // the round only starts if the user presses a valid letter
+
         // check to see whether the user won or lost
         if (userGuess === computerGuess) {
             wins++;
@@ -44,9 +44,10 @@ document.onkeyup = function(event) {
         winsText.textContent = wins;
         lossesText.textContent = losses;
         userGuessText.textContent = userGuess;
+        guessesRemainingText.textContent = guessesRemaining;
        
-    } if {
+        } else {
         // the user will get a message if they press any key other than a letter
         alert("Invalid guess! Press any LETTER to play!");
-    }
-}
+    };
+    
