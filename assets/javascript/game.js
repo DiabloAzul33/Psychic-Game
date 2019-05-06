@@ -15,39 +15,38 @@ var userGuessText = document.getElementById("userGuess");
 var guessesRemainingText = document.getElementById("guessesRemaining");
 var guessesMadeText = document.getElementById("guessesMade");
 
-document.onkeyup = function(event) {
+document.onkeyup = function (event) {
     // storing the userGuess, lowercased for ease & consistency
     var userGuess = event.key.toLowerCase();
     // generating a random computerGuess each round
     var computerGuess = letters[Math.floor(Math.random() * letters.length)];
 
-        function repeat(){
-            guessesRemaining = 9;
-            guessesMade = [];
-            computerGuess = letters[Math.floor(Math.random()* letters.length)];
-        }
+    function repeat() {
+        guessesRemaining = 9;
+        guessesMade = [];
+        computerGuess = letters[Math.floor(Math.random() * letters.length)];
+    }
 
-        // check to see whether the user won or lost
-        if (userGuess === computerGuess) {
-            wins++;
-            repeat();
-        } else if (guessesRemaining > 1){
-            guessesRemaining--;
-            guessesMade.push(userGuess);
-        }else {
-            losses++;
-            repeat();
-        }
+    // check to see whether the user won or lost
+    if (userGuess === computerGuess) {
+        wins++;
+        repeat();
+    } else if (guessesRemaining > 1) {
+        guessesRemaining--;
+        guessesMade.push(userGuess);
+    } else {
+        losses++;
+        repeat();
+    }
 
-        // after each turn update the HTML
-        directionsText.style.display = "none";
-        winsText.textContent = wins;
-        lossesText.textContent = losses;
-        userGuessText.textContent = userGuess;
-        guessesRemainingText.textContent = guessesRemaining;
-       
-        } else {
-        // the user will get a message if they press any key other than a letter
-        alert("Invalid guess! Press any LETTER to play!");
-    };
-    
+    // after each turn update the HTML
+    winsText.textContent = wins;
+    lossesText.textContent = losses;
+    userGuessText.textContent = userGuess;
+    guessesRemainingText.textContent = guessesRemaining;
+
+    } else {
+    // the user will get a message if they press any key other than a letter
+    alert("Invalid guess! Press any LETTER to play!");
+    }
+}   
