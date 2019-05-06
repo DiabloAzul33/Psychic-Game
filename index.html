@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <script type="text/javascript" src="assets/javascript/game.js"></script> 
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
@@ -21,24 +21,32 @@
 
     <title>Pyschic Game</title>
 </head>
-<h1>Take Your Best Guess!</h1>
+<h1 class="display-3 text-center">Take Your Best Guess!</h1>
+<img src=""
+    class="img-fluid rounded" alt="Responsive image">
 
-<!--image of theme-->
-<!--Press to start instructions-->
-<h2 id="directions">Try and guess what letter I am thinking of. Press any letter to start!</h2>
+<h2 id="directions" class="text-center">Try and guess what letter I am thinking of. Press any letter to start!</h2>
 
-<div>
-    <p>Wins: <span id="wins">0</span></p>
-    <p>Losses: <span id="losses">0</span></p>
+<div class="container">
+    <div class="row">
+        <div class="col-md">
+            <div class="row"><br></div>
+            <div class="row">
+                <div class="col-md text-center">
+                    <p>Wins: <span id="wins">0</span></p>
+                    <p>Losses: <span id="losses">0</span></p>
 
-    <p>Guesses Remaining: <span id="guesses-remaining">n/a</span></p>
-    <p>Guesses Made So Far: <span id="guesses-made">n/a</span></p>
+                    <p>Guesses Remaining: <span id="guessesRemaining">n/a</span></p>
+                    <p>Guesses Made So Far: <span id="guessesMade">n/a</span></p>
 
-<!---->
 
-</div>   
-<body>
 
-</body>
+
+                </div>
+            </div>
+
+            <body>
+
+            </body>
 
 </html>
