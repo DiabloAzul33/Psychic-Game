@@ -7,7 +7,7 @@ var losses = 0;
 var guessesMade = [];
 var guessesRemaining = 9;
 
-// references to the various HTML elements we'll need to alter later 
+// references to the various HTML elements 
 var directionsText = document.getElementById("directions");
 var winsText = document.getElementById("wins");
 var lossesText = document.getElementById("losses");
