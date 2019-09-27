@@ -17,7 +17,7 @@ var guessesMadeText = document.getElementById("guessesMade");
     // generating a random computerGuess each round
 var computerGuess = letters[Math.floor(Math.random() * letters.length)];
 
-    function repeat() {
+function repeat() {
         guessesRemaining = 9;
         guessesMade = [];
         computerGuess = letters[Math.floor(Math.random() * letters.length)];
@@ -25,27 +25,39 @@ var computerGuess = letters[Math.floor(Math.random() * letters.length)];
 document.onkeyup = function (event) {
     // storing the userGuess, lowercased for ease & consistency
     var userGuess = event.key.toLowerCase();
-    console.log(userGuess);
-    console.log(computerGuess);
+    console.log("userGuess:" + userGuess);
+    console.log("computerGuess:" + computerGuess);
+    console.log("guessesRemaining:" + guessesRemaining);
+    console.log("wins:" + wins);
+    console.log("losses:" + losses)
+    console.log("guessesMade:" + guessesMade);
 
     // check to see whether the user won or lost
 if (letters.indexOf(userGuess) > -1){
     if (guessesMade.indexOf(userGuess) === -1){
     if (userGuess === computerGuess) {
         wins++;
+        alert("OoOoH so you're psychic eh?");
+        console.log(alert);
         repeat();
     } else if (guessesRemaining > 1) {
         guessesRemaining--;
         guessesMade.push(userGuess);
     } else {
         losses++;
+        alert("Ouch, you're not very good at guessing friend!");
+        console.log(alert);
         repeat();
     }
     // after each turn update the HTML
-    winsText.textContent = wins;
-    lossesText.textContent = losses;
-    guessesMadeText.textContent = guessesMade;
-    guessesRemainingText.textContent = guessesRemaining;
+    document.querySelector("#guessesMade").innerHTML = guessesMade;
+    document.querySelector("#guessesRemaining").innerHTML = guessesRemaining;
+    document.querySelector("#wins").innerHTML = wins;
+    document.querySelector("#losses").innerHTML = losses;
+    // winsText.textContent = wins;
+    // lossesText.textContent = losses;
+    // guessesMadeText.textContent = guessesMade;
+    // guessesRemainingText.textContent = guessesRemaining;
     } else {
         alert("Try a new letter to keep playing!")
     }
